@@ -1,0 +1,158 @@
+
+<!-- Mobile Menu -->
+<section class="mobile-menu-area">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="mobile-menu">
+                  <nav id="dropdown">
+                      <a href=""><img src="images/f-logo.png" alt=""></a>
+                      <ul class="list-unstyled">
+                          <li><a>Home</a>
+                              <ul class="list-unstyled">
+                                  <li><a href="index.html">Home Style 1</a></li>
+                                  <li><a href="02-home-two.html">Home Style 2</a></li>
+                                  <li><a href="03-home-three.html">Home Style 3</a></li>
+                              </ul>
+                          </li>
+                          <li><a>Pages</a>
+                              <ul class="list-unstyled">
+                                  <li><a href="04-about-us.html">About Us</a></li>
+                                  <li><a href="05-category-one.html">Category Style 1</a></li>
+                                  <li><a href="06-category-two.html">Category Style 2</a></li>
+                                  <li><a href="07-category-three.html">Category Style 3</a></li>
+                                  <li><a href="08-category-four.html">Category Style 4</a></li>
+                                  <li><a href="09-news-details-one.html">Single News 1</a></li>
+                                  <li><a href="10-news-details-two.html">Single News 2</a></li>
+                                  <li><a href="12-faq.html">Faq</a></li>
+                                  <li><a href="11-contact.html">Contact</a></li>
+                                  <li><a href="13-404.html">404</a></li>
+                              </ul>
+                          </li>
+                          <li><a href="#">Politics</a></li>
+                          <li><a href="#">Business</a></li>
+                          <li><a href="#">Sports</a></li>
+                      </ul>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- End Mobile Menu -->
+
+<!-- Breadcrumb Area -->
+<section class="breadcrumb-area">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="breadcrumb-box">
+                  <ul class="list-unstyled list-inline">
+                      <li class="list-inline-item"><a href="#">Home</a> <i class="fa fa-angle-right"></i></li>
+                      <li class="list-inline-item">Tin tức</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- End Breadcrumb Area -->
+
+<!-- Category Area -->
+<section class="category1-area">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 col-md-12">
+              <div class="row">
+                  <div *ngFor="let item of newsInformation">
+                    <app-information-new-component [NewInformation]="item"></app-information-new-component>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-12">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="follow-widget">
+                          <div class="sec-title">
+                              <h5>Follow Us</h5>
+                          </div>
+                          <ul class="list-unstyled clearfix">
+                              <li>
+                                  <a href="">
+                                      <i class="fa fa-facebook"></i>
+                                      <p>44,410</p>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="">
+                                      <i class="fa fa-twitter"></i>
+                                      <p>31,219</p>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="">
+                                      <i class="fa fa-rss"></i>
+                                      <p>11,209</p>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="">
+                                      <i class="fa fa-linkedin"></i>
+                                      <p>19,323</p>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="">
+                                      <i class="fa fa-google-plus"></i>
+                                      <p>29,559</p>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="">
+                                      <i class="fa fa-youtube"></i>
+                                      <p>56,717</p>
+                                  </a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="tab-widget">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#recent">Tin tức mới</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="recent" role="tabpanel">
+                              <ng-container *ngFor="let item of newsInformation">
+                                  <ng-container *ngIf="item.is_popular != false">
+                                    <app-information-news-tab-width-component class="rec-item d-flex" [classImg]="'rec-img'" [NewInformation]="item"></app-information-news-tab-width-component>
+                                  </ng-container>
+                              </ng-container>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                  <div class="col-md-12">
+                      <div class="mv-widget">
+                          <div class="sec-title">
+                              <h5>Tin nổi bật</h5>
+                          </div>
+                          <div class="mv-slider owl-carousel">
+                              <div class="mv-item">
+                                <ng-container *ngFor="let item of newsInformation">
+                                  <ng-container *ngIf="item.is_popular == true">
+                                    <app-information-news-evaluate-tab-component  class="mv-box d-flex" [NewInformation]="item"></app-information-news-evaluate-tab-component>
+                                  </ng-container>
+                                </ng-container>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

@@ -31,46 +31,11 @@
                                           </div>
                                       </div>
                                       <div class="col-md-6">
-                                          <div class="lt-item-sm d-flex">
-                                              <div class="lt-img">
-                                                  <a href=""><img src="assets/images/lt-sm-1.jpg" alt=""></a>
-                                              </div>
-                                              <div class="img-content">
-                                                  <p><a href="">These sentences are selected from various online
-                                                      news.</a></p>
-                                                  <span>February 11, 2019</span>
-                                              </div>
-                                          </div>
-                                          <div class="lt-item-sm d-flex">
-                                              <div class="lt-img">
-                                                  <a href=""><img src="assets/images/lt-sm-2.jpg" alt=""></a>
-                                              </div>
-                                              <div class="img-content">
-                                                  <p><a href="">These sentences are selected from various online
-                                                      news.</a></p>
-                                                  <span>February 11, 2019</span>
-                                              </div>
-                                          </div>
-                                          <div class="lt-item-sm d-flex">
-                                              <div class="lt-img">
-                                                  <a href=""><img src="assets/images/lt-sm-3.jpg" alt=""></a>
-                                              </div>
-                                              <div class="img-content">
-                                                  <p><a href="">These sentences are selected from various online
-                                                      news.</a></p>
-                                                  <span>February 11, 2019</span>
-                                              </div>
-                                          </div>
-                                          <div class="lt-item-sm d-flex">
-                                              <div class="lt-img">
-                                                  <a href=""><img src="assets/images/lt-sm-4.jpg" alt=""></a>
-                                              </div>
-                                              <div class="img-content">
-                                                  <p><a href="">These sentences are selected from various online
-                                                      news.</a></p>
-                                                  <span>February 11, 2019</span>
-                                              </div>
-                                          </div>
+                                            <ng-container *ngFor="let item of newsInformation">
+                                              <ng-container *ngIf="item.is_popular == true">
+                                              <app-information-news-tab-width-component class="lt-item-sm d-flex" [classImg]="'lt-img'" [NewInformation]="item"></app-information-news-tab-width-component>
+                                              </ng-container>
+                                            </ng-container>
                                       </div>
                                   </div>
                               </div>

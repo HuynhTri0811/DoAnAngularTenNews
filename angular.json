@@ -27,8 +27,6 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/custom.js",
-              "src/plugins.js"
             ]
           },
           "configurations": {
